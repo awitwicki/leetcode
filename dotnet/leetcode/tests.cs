@@ -15,6 +15,25 @@ namespace leetcode
         {
             int lengthOfLongestSubstring(string s)
             {
+                //pv4k method
+                //var set = new Dictionary<char, int>();
+                //int longest = 0;
+                //for (int i = 0; i < s.Length; i++)
+                //{
+                //    if (set.ContainsKey(s[i]))
+                //    {
+                //        if (set.Count > longest)
+                //        {
+                //            longest = set.Count;
+                //        }
+                //        i = set[s[i]] + 1;
+                //        set = new Dictionary<char, int>();
+                //    }
+                //    set.Add(s[i], i);
+                //}
+                //return Math.Max(set.Count, longest);
+
+                //my method
                 int maxCount = 0;
 
                 for (int i = 0; i < s.Length; i++)
