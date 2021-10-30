@@ -175,7 +175,6 @@ namespace leetcode
                         _indexes.RemoveAt(_capacity);
                         _cache.Remove(keyToRemove);
                     }
-
                 }
                 else
                 // Update item
