@@ -230,5 +230,45 @@ namespace leetcode
             lRUCache.Put(2, 2);
             lRUCache.Put(2, 1);
         }
+
+        /// <summary>
+        /// https://leetcode.com/problems/palindrome-number/
+        /// Given an integer x, return true if x is a palindrome, and false otherwise.
+        /// </summary>
+        [Theory]
+        [InlineData(121, true)]
+        [InlineData(-121, false)]
+        [InlineData(10, false)]
+        [InlineData(1001, true)]
+        public void palindrome_number(int input, bool expected)
+        {
+          bool IsPalindrome(int input)
+            {
+                switch (input)
+                {
+                    case < 0:
+                        return false;
+                    case < 10:
+                        return true;
+                }
+                
+                var disAssembledInputToArray = input.ToString();
+                var itemsCount = disAssembledInputToArray.Length;
+                
+                for (var i = 0; i < itemsCount / 2; i++)
+                {
+                    if (disAssembledInputToArray[i] != disAssembledInputToArray[disAssembledInputToArray.Length - 1 -i])
+                    {
+                        return false;
+                    }
+                }
+                
+                return true;
+            }
+
+            var result = IsPalindrome(input);
+            
+            Assert.Equal(expected, result);
+        }
     }
 }
